@@ -1,25 +1,15 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion cfgs.compileSdkVersion
+    compileSdkVersion build_versions.target_sdk
+    buildToolsVersion build_versions.build_tools
 
     defaultConfig {
-        minSdkVersion cfgs.minSdkVersion
-        targetSdkVersion cfgs.targetSdkVersion
-        versionCode cfgs.ucropVersionCode
-        versionName cfgs.ucropVersionName
+        minSdkVersion 14
+        targetSdkVersion build_versions.target_sdk
 
         vectorDrawables.useSupportLibrary = true
-    }
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
-    }
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_7
-        targetCompatibility JavaVersion.VERSION_1_7
+
     }
     lintOptions {
         abortOnError false
@@ -30,9 +20,10 @@ android {
 }
 
 dependencies {
-    //noinspection GradleCompatible
-    compile "com.android.support:appcompat-v7:${cfgs.androidSupportVersion}"
-    //noinspection GradleCompatible
-    compile "com.android.support:recyclerview-v7:${cfgs.androidSupportVersion}"
-    implementation "com.github.bumptech.glide:glide:${cfgs.glide}"
+    compileOnly deps.support.app_compat
+    compileOnly deps.support.recyclerview
+    compileOnly deps.glide
 }
+
+apply from: '../JitPackUpload.gradle'
+

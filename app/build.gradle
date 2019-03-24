@@ -1,14 +1,15 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion cfgs.compileSdkVersion
+    compileSdkVersion build_versions.target_sdk
+    buildToolsVersion build_versions.build_tools
 
     defaultConfig {
         applicationId "com.luck.pictureselector"
-        minSdkVersion cfgs.minSdkVersion
-        targetSdkVersion cfgs.targetSdkVersion
-        versionCode cfgs.versionCode
-        versionName cfgs.versionName
+        minSdkVersion 14
+        targetSdkVersion build_versions.target_sdk
+        versionCode 1
+        versionName "1.0.0"
     }
     buildTypes {
         release {
@@ -19,8 +20,15 @@ android {
 }
 
 dependencies {
-    compile project(':picture_library')
-    testCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.1'
-    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5.1'
-    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.1'
+    implementation project(':picture_library')
+
+    implementation deps.support.app_compat
+    implementation deps.support.recyclerview
+    implementation deps.glide
+    implementation deps.rxjava2
+    implementation deps.rx_android
+
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.6.2'
+    releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.6.2'
+    testImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.6.2'
 }
