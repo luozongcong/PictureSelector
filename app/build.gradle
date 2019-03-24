@@ -20,7 +20,8 @@ android {
 }
 
 dependencies {
-    implementation project(':picture_library')
+    implementation project(':picture-core')
+    implementation project(':picture-ucrop')
 
     implementation deps.support.app_compat
     implementation deps.support.recyclerview
