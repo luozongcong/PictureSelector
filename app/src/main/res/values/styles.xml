@@ -12,23 +12,25 @@
     <style name="picture.white.style" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
         <!--标题栏背景色-->
-        <item name="colorPrimary">@color/picture_white</item>
+        <item name="colorPrimary">#F7F7F7</item>
         <!--状态栏背景色-->
-        <item name="colorPrimaryDark">@color/picture_white</item>
+        <item name="colorPrimaryDark">#F7F7F7</item>
         <!--是否改变图片列表界面状态栏字体颜色为黑色-->
         <item name="picture_statusFontColor">true</item>
         <!--返回键图标-->
-        <item name="picture_leftBack_icon">@drawable/back2</item>
+        <item name="picture_leftBack_icon">@drawable/ic_action_back</item>
+        <!--title图标文字的padding-->
+        <item name="picture_title_action_padding">10dp</item>
         <!--标题下拉箭头-->
-        <item name="picture_arrow_down_icon">@drawable/orange_arrow_down</item>
+        <item name="picture_arrow_down_icon">@drawable/ic_arrow_down</item>
         <!--标题上拉箭头-->
-        <item name="picture_arrow_up_icon">@drawable/orange_arrow_up</item>
+        <item name="picture_arrow_up_icon">@drawable/ic_arrow_up</item>
         <!--标题文字颜色-->
         <item name="picture_title_textColor">@color/picture_black</item>
         <!--标题栏右边文字-->
-        <item name="picture_right_textColor">@color/black</item>
+        <item name="picture_right_textColor">#FF9915</item>
         <!--图片列表勾选样式-->
-        <item name="picture_checked_style">@drawable/pic_selector_checkbox</item>
+        <item name="picture_checked_style">@drawable/orange_selector_checkbox</item>
         <!--开启图片列表勾选数字模式,开启的话勾选样式要换-->
         <item name="picture_style_checkNumMode">false</item>
         <!--选择图片样式0/9-->
@@ -50,7 +52,7 @@
         <!--预览界面底部背景色-->
         <item name="picture_ac_preview_bottom_bg">@color/color_fa</item>
         <!--预览界面返回箭头-->
-        <item name="picture_preview_leftBack_icon">@drawable/back2</item>
+        <item name="picture_preview_leftBack_icon">@drawable/ic_action_back</item>
         <!--裁剪页面标题背景色-->
         <item name="picture_crop_toolbar_bg">@color/bar_grey</item>
         <!--裁剪页面状态栏颜色-->
@@ -72,6 +74,8 @@
         <item name="picture_statusFontColor">false</item>
         <!--返回键图标-->
         <item name="picture_leftBack_icon">@drawable/pic_ic_back</item>
+        <!--title图标文字的padding-->
+        <item name="picture_title_action_padding">10dp</item>
         <!--标题下拉箭头-->
         <item name="picture_arrow_down_icon">@drawable/pic_arrow_down</item>
         <!--标题上拉箭头-->
@@ -126,6 +130,8 @@
         <item name="picture_statusFontColor">true</item>
         <!--返回键图标-->
         <item name="picture_leftBack_icon">@drawable/back2</item>
+        <!--title图标文字的padding-->
+        <item name="picture_title_action_padding">10dp</item>
         <!--标题下拉箭头-->
         <item name="picture_arrow_down_icon">@drawable/orange_arrow_down</item>
         <!--标题上拉箭头-->

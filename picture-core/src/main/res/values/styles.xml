@@ -65,6 +65,8 @@
         <item name="picture_statusFontColor">false</item>
         <!--返回键图标-->
         <item name="picture_leftBack_icon">@drawable/pic_ic_back</item>
+        <!--title图标文字的padding-->
+        <item name="picture_title_action_padding">10dp</item>
         <!--标题下拉箭头-->
         <item name="picture_arrow_down_icon">@drawable/pic_arrow_down</item>
         <!--标题上拉箭头-->
