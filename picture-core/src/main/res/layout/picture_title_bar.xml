@@ -17,7 +17,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:padding="?attr/picture_title_action_padding"
+            android:paddingLeft="?attr/picture_title_action_padding"
             android:src="?attr/picture_leftBack_icon" />
 
         <TextView
@@ -33,7 +33,7 @@
             android:padding="6dp"
             android:text="@string/picture_camera_roll"
             android:textColor="?attr/picture_title_textColor"
-            android:textSize="17sp" />
+            android:textSize="?attr/picture_title_textSize" />
 
         <TextView
             android:id="@+id/picture_right"
@@ -42,10 +42,10 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:gravity="center"
-            android:padding="?attr/picture_title_action_padding"
+            android:paddingRight="?attr/picture_title_action_padding"
             android:text="@string/picture_cancel"
             android:textColor="?attr/picture_right_textColor"
-            android:textSize="14sp" />
+            android:textSize="?attr/picture_right_textSize" />
 
     </RelativeLayout>
 

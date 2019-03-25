@@ -15,7 +15,9 @@
 <resources>
 
     <attr name="picture_title_textColor" format="reference|color" />
+    <attr name="picture_title_textSize" format="dimension" />
     <attr name="picture_right_textColor" format="reference|color" />
+    <attr name="picture_right_textSize" format="dimension" />
     <attr name="picture_leftBack_icon" format="reference" />
     <attr name="picture_title_action_padding" format="dimension" />
     <attr name="picture_arrow_down_icon" format="reference" />

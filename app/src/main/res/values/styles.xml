@@ -20,7 +20,7 @@
         <!--返回键图标-->
         <item name="picture_leftBack_icon">@drawable/ic_action_back</item>
         <!--title图标文字的padding-->
-        <item name="picture_title_action_padding">10dp</item>
+        <item name="picture_title_action_padding">20dp</item>
         <!--标题下拉箭头-->
         <item name="picture_arrow_down_icon">@drawable/ic_arrow_down</item>
         <!--标题上拉箭头-->
@@ -29,6 +29,10 @@
         <item name="picture_title_textColor">@color/picture_black</item>
         <!--标题栏右边文字-->
         <item name="picture_right_textColor">#FF9915</item>
+        <!--标题文字大小-->
+        <item name="picture_title_textSize">17sp</item>
+        <!--标题栏右边文字大小-->
+        <item name="picture_right_textSize">14sp</item>
         <!--图片列表勾选样式-->
         <item name="picture_checked_style">@drawable/orange_selector_checkbox</item>
         <!--开启图片列表勾选数字模式,开启的话勾选样式要换-->
@@ -84,6 +88,10 @@
         <item name="picture_title_textColor">@color/picture_white</item>
         <!--标题栏右边文字-->
         <item name="picture_right_textColor">@color/white</item>
+        <!--标题文字大小-->
+        <item name="picture_title_textSize">17sp</item>
+        <!--标题栏右边文字大小-->
+        <item name="picture_right_textSize">14sp</item>
         <!--图片列表勾选样式-->
         <item name="picture_checked_style">@drawable/checkbox_num_selector</item>
         <!--开启图片列表勾选数字模式,开启的话勾选样式要换-->
@@ -140,6 +148,10 @@
         <item name="picture_title_textColor">@color/picture_color_53</item>
         <!--标题栏右边文字-->
         <item name="picture_right_textColor">@color/picture_color_53</item>
+        <!--标题文字大小-->
+        <item name="picture_title_textSize">17sp</item>
+        <!--标题栏右边文字大小-->
+        <item name="picture_right_textSize">14sp</item>
         <!--图片列表勾选样式-->
         <item name="picture_checked_style">@drawable/pic_selector_checkbox</item>
         <!--开启图片列表勾选数字模式,开启的话勾选样式要换-->

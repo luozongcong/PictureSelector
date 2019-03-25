@@ -75,6 +75,10 @@
         <item name="picture_title_textColor">@color/picture_white</item>
         <!--标题栏右边文字-->
         <item name="picture_right_textColor">@color/picture_white</item>
+        <!--标题文字大小-->
+        <item name="picture_title_textSize">17sp</item>
+        <!--标题栏右边文字大小-->
+        <item name="picture_right_textSize">14sp</item>
         <!--图片列表勾选样式-->
         <item name="picture_checked_style">@drawable/pic_selector_checkbox</item>
         <!--开启图片列表勾选数字模式-->
