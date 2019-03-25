@@ -73,7 +73,15 @@
 
 ```
 dependencies {
-    implementation 'com.github.LuckSiege.PictureSelector:picture_library:v2.2.3'
+    implementation 'com.github.xuexiangjys.PictureSelector:picture-core:1.0.0'
+    //需要裁剪时使用
+    implementation 'com.github.xuexiangjys.PictureSelector:picture-ucrop:1.0.0'
+
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support:recyclerview-v7:28.0.0'
+    implementation 'com.github.bumptech.glide:glide:4.8.0'
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.0'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.0'
 }
 
 ```
