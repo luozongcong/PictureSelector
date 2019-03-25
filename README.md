@@ -73,9 +73,9 @@
 
 ```
 dependencies {
-    implementation 'com.github.xuexiangjys.PictureSelector:picture-core:1.0.0'
+    implementation 'com.github.xuexiangjys.PictureSelector:picture-core:1.0.1'
     //需要裁剪时使用
-    implementation 'com.github.xuexiangjys.PictureSelector:picture-ucrop:1.0.0'
+    implementation 'com.github.xuexiangjys.PictureSelector:picture-ucrop:1.0.1'
 
     implementation 'com.android.support:appcompat-v7:28.0.0'
     implementation 'com.android.support:recyclerview-v7:28.0.0'
