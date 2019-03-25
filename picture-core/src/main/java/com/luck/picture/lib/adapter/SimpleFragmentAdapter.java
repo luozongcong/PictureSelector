@@ -26,7 +26,7 @@ import com.luck.picture.lib.photoview.OnViewTapListener;
 import com.luck.picture.lib.photoview.PhotoView;
 import com.luck.picture.lib.widget.longimage.ImageSource;
 import com.luck.picture.lib.widget.longimage.ImageViewState;
-import com.luck.picture.lib.widget.longimage.SubsamplingScaleImageView;
+import com.luck.picture.lib.widget.longimage.SubSamplingScaleImageView;
 
 import java.util.List;
 
@@ -81,7 +81,7 @@ public class SimpleFragmentAdapter extends PagerAdapter {
         // 常规图控件
         final PhotoView imageView = (PhotoView) contentView.findViewById(R.id.preview_image);
         // 长图控件
-        final SubsamplingScaleImageView longImg = (SubsamplingScaleImageView) contentView.findViewById(R.id.longImg);
+        final SubSamplingScaleImageView longImg = (SubSamplingScaleImageView) contentView.findViewById(R.id.longImg);
 
         ImageView iv_play = (ImageView) contentView.findViewById(R.id.iv_play);
         LocalMedia media = images.get(position);
@@ -170,13 +170,13 @@ public class SimpleFragmentAdapter extends PagerAdapter {
      * @param bmp
      * @param longImg
      */
-    private void displayLongPic(Bitmap bmp, SubsamplingScaleImageView longImg) {
+    private void displayLongPic(Bitmap bmp, SubSamplingScaleImageView longImg) {
         longImg.setQuickScaleEnabled(true);
         longImg.setZoomEnabled(true);
         longImg.setPanEnabled(true);
         longImg.setDoubleTapZoomDuration(100);
-        longImg.setMinimumScaleType(SubsamplingScaleImageView.SCALE_TYPE_CENTER_CROP);
-        longImg.setDoubleTapZoomDpi(SubsamplingScaleImageView.ZOOM_FOCUS_CENTER);
+        longImg.setMinimumScaleType(SubSamplingScaleImageView.SCALE_TYPE_CENTER_CROP);
+        longImg.setDoubleTapZoomDpi(SubSamplingScaleImageView.ZOOM_FOCUS_CENTER);
         longImg.setImage(ImageSource.cachedBitmap(bmp), new ImageViewState(0, new PointF(0, 0), 0));
     }
 }

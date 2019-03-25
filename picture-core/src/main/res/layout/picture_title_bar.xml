@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:padding="15dp"
-            android:src="?attr/picture.leftBack.icon" />
+            android:src="?attr/picture_leftBack_icon" />
 
         <TextView
             android:id="@+id/picture_title"
@@ -26,13 +26,13 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:drawablePadding="2dp"
-            android:drawableRight="?attr/picture.arrow_down.icon"
+            android:drawableRight="?attr/picture_arrow_down_icon"
             android:ellipsize="end"
             android:gravity="center"
             android:maxEms="11"
             android:padding="6dp"
             android:text="@string/picture_camera_roll"
-            android:textColor="?picture.title.textColor"
+            android:textColor="?attr/picture_title_textColor"
             android:textSize="17sp" />
 
         <TextView
@@ -44,13 +44,13 @@
             android:gravity="center"
             android:padding="10dp"
             android:text="@string/picture_cancel"
-            android:textColor="?picture.right.textColor"
+            android:textColor="?attr/picture_right_textColor"
             android:textSize="14sp" />
     </RelativeLayout>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
-        android:background="@color/line_color" />
+        android:background="@color/picture_line_color" />
 </LinearLayout>
 

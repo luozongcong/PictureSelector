@@ -10,7 +10,7 @@
         android:layout_marginLeft="2dp"
         android:layout_marginRight="2dp" />
 
-    <com.luck.picture.lib.widget.longimage.SubsamplingScaleImageView
+    <com.luck.picture.lib.widget.longimage.SubSamplingScaleImageView
         android:id="@+id/longImg"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -21,6 +21,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:src="@drawable/ic_video_play"
+        android:src="@drawable/pic_ic_video_play"
         android:visibility="invisible" />
 </FrameLayout>

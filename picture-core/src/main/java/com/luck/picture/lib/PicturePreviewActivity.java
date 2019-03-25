@@ -89,7 +89,7 @@ public class PicturePreviewActivity extends PictureBaseActivity implements
         }
         mHandler = new Handler();
         screenWidth = ScreenUtils.getScreenWidth(this);
-        animation = OptAnimationLoader.loadAnimation(this, R.anim.modal_in);
+        animation = OptAnimationLoader.loadAnimation(this, R.anim.pic_modal_in);
         animation.setAnimationListener(this);
         picture_left_back = (ImageView) findViewById(R.id.picture_left_back);
         viewPager = (PreviewViewPager) findViewById(R.id.preview_pager);

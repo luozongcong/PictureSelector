@@ -42,8 +42,8 @@ public class PhotoPopupWindow extends PopupWindow implements View.OnClickListene
         this.update();
         this.setBackgroundDrawable(new ColorDrawable());
         this.setContentView(inflate);
-        animationIn = AnimationUtils.loadAnimation(context, R.anim.up_in);
-        animationOut = AnimationUtils.loadAnimation(context, R.anim.down_out);
+        animationIn = AnimationUtils.loadAnimation(context, R.anim.pic_up_in);
+        animationOut = AnimationUtils.loadAnimation(context, R.anim.pic_down_out);
         ll_root = (LinearLayout) inflate.findViewById(R.id.ll_root);
         fl_content = (FrameLayout) inflate.findViewById(R.id.fl_content);
         picture_tv_photo = (TextView) inflate.findViewById(R.id.picture_tv_photo);

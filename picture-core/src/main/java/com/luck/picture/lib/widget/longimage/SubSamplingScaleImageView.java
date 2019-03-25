@@ -72,9 +72,9 @@ import java.util.concurrent.Executor;
  * s prefixes - coordinates, translations and distances measured in source image pixels (scaled)
  */
 @SuppressWarnings("unused")
-public class SubsamplingScaleImageView extends View {
+public class SubSamplingScaleImageView extends View {
 
-    private static final String TAG = SubsamplingScaleImageView.class.getSimpleName();
+    private static final String TAG = SubSamplingScaleImageView.class.getSimpleName();
 
     /** Attempt to use EXIF information on the image to rotate it. Works for external files only. */
     public static final int ORIENTATION_USE_EXIF = -1;
@@ -277,7 +277,7 @@ public class SubsamplingScaleImageView extends View {
     private float density;
 
 
-    public SubsamplingScaleImageView(Context context, AttributeSet attr) {
+    public SubSamplingScaleImageView(Context context, AttributeSet attr) {
         super(context, attr);
         density = getResources().getDisplayMetrics().density;
         setMinimumDpi(160);
@@ -287,39 +287,39 @@ public class SubsamplingScaleImageView extends View {
             public boolean handleMessage(Message message) {
                 if (message.what == MESSAGE_LONG_CLICK && onLongClickListener != null) {
                     maxTouchCount = 0;
-                    SubsamplingScaleImageView.super.setOnLongClickListener(onLongClickListener);
+                    SubSamplingScaleImageView.super.setOnLongClickListener(onLongClickListener);
                     performLongClick();
-                    SubsamplingScaleImageView.super.setOnLongClickListener(null);
+                    SubSamplingScaleImageView.super.setOnLongClickListener(null);
                 }
                 return true;
             }
         });
         // Handle XML attributes
         if (attr != null) {
-            TypedArray typedAttr = getContext().obtainStyledAttributes(attr, R.styleable.SubsamplingScaleImageView);
-            if (typedAttr.hasValue(R.styleable.SubsamplingScaleImageView_assetName)) {
-                String assetName = typedAttr.getString(R.styleable.SubsamplingScaleImageView_assetName);
+            TypedArray typedAttr = getContext().obtainStyledAttributes(attr, R.styleable.PicSubSamplingScaleImageView);
+            if (typedAttr.hasValue(R.styleable.PicSubSamplingScaleImageView_pic_assetName)) {
+                String assetName = typedAttr.getString(R.styleable.PicSubSamplingScaleImageView_pic_assetName);
                 if (assetName != null && assetName.length() > 0) {
                     setImage(ImageSource.asset(assetName).tilingEnabled());
                 }
             }
-            if (typedAttr.hasValue(R.styleable.SubsamplingScaleImageView_src)) {
-                int resId = typedAttr.getResourceId(R.styleable.SubsamplingScaleImageView_src, 0);
+            if (typedAttr.hasValue(R.styleable.PicSubSamplingScaleImageView_pic_src)) {
+                int resId = typedAttr.getResourceId(R.styleable.PicSubSamplingScaleImageView_pic_src, 0);
                 if (resId > 0) {
                     setImage(ImageSource.resource(resId).tilingEnabled());
                 }
             }
-            if (typedAttr.hasValue(R.styleable.SubsamplingScaleImageView_panEnabled)) {
-                setPanEnabled(typedAttr.getBoolean(R.styleable.SubsamplingScaleImageView_panEnabled, true));
+            if (typedAttr.hasValue(R.styleable.PicSubSamplingScaleImageView_pic_panEnabled)) {
+                setPanEnabled(typedAttr.getBoolean(R.styleable.PicSubSamplingScaleImageView_pic_panEnabled, true));
             }
-            if (typedAttr.hasValue(R.styleable.SubsamplingScaleImageView_zoomEnabled)) {
-                setZoomEnabled(typedAttr.getBoolean(R.styleable.SubsamplingScaleImageView_zoomEnabled, true));
+            if (typedAttr.hasValue(R.styleable.PicSubSamplingScaleImageView_pic_zoomEnabled)) {
+                setZoomEnabled(typedAttr.getBoolean(R.styleable.PicSubSamplingScaleImageView_pic_zoomEnabled, true));
             }
-            if (typedAttr.hasValue(R.styleable.SubsamplingScaleImageView_quickScaleEnabled)) {
-                setQuickScaleEnabled(typedAttr.getBoolean(R.styleable.SubsamplingScaleImageView_quickScaleEnabled, true));
+            if (typedAttr.hasValue(R.styleable.PicSubSamplingScaleImageView_pic_quickScaleEnabled)) {
+                setQuickScaleEnabled(typedAttr.getBoolean(R.styleable.PicSubSamplingScaleImageView_pic_quickScaleEnabled, true));
             }
-            if (typedAttr.hasValue(R.styleable.SubsamplingScaleImageView_tileBackgroundColor)) {
-                setTileBackgroundColor(typedAttr.getColor(R.styleable.SubsamplingScaleImageView_tileBackgroundColor, Color.argb(0, 0, 0, 0)));
+            if (typedAttr.hasValue(R.styleable.PicSubSamplingScaleImageView_pic_tileBackgroundColor)) {
+                setTileBackgroundColor(typedAttr.getColor(R.styleable.PicSubSamplingScaleImageView_pic_tileBackgroundColor, Color.argb(0, 0, 0, 0)));
             }
             typedAttr.recycle();
         }
@@ -327,7 +327,7 @@ public class SubsamplingScaleImageView extends View {
         quickScaleThreshold = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 20, context.getResources().getDisplayMetrics());
     }
 
-    public SubsamplingScaleImageView(Context context) {
+    public SubSamplingScaleImageView(Context context) {
         this(context, null);
     }
 
@@ -906,7 +906,7 @@ public class SubsamplingScaleImageView extends View {
                 sCenter.y = sHeight()/2;
             }
         }
-        float doubleTapZoomScale = Math.min(maxScale, SubsamplingScaleImageView.this.doubleTapZoomScale);
+        float doubleTapZoomScale = Math.min(maxScale, SubSamplingScaleImageView.this.doubleTapZoomScale);
         boolean zoomIn = scale <= doubleTapZoomScale * 0.9;
         float targetScale = zoomIn ? doubleTapZoomScale : minScale();
         if (doubleTapZoomStyle == ZOOM_FOCUS_CENTER_IMMEDIATE) {
@@ -1483,14 +1483,14 @@ public class SubsamplingScaleImageView extends View {
      * Async task used to get image details without blocking the UI thread.
      */
     private static class TilesInitTask extends AsyncTask<Void, Void, int[]> {
-        private final WeakReference<SubsamplingScaleImageView> viewRef;
+        private final WeakReference<SubSamplingScaleImageView> viewRef;
         private final WeakReference<Context> contextRef;
         private final WeakReference<DecoderFactory<? extends ImageRegionDecoder>> decoderFactoryRef;
         private final Uri source;
         private ImageRegionDecoder decoder;
         private Exception exception;
 
-        TilesInitTask(SubsamplingScaleImageView view, Context context, DecoderFactory<? extends ImageRegionDecoder> decoderFactory, Uri source) {
+        TilesInitTask(SubSamplingScaleImageView view, Context context, DecoderFactory<? extends ImageRegionDecoder> decoderFactory, Uri source) {
             this.viewRef = new WeakReference<>(view);
             this.contextRef = new WeakReference<>(context);
             this.decoderFactoryRef = new WeakReference<DecoderFactory<? extends ImageRegionDecoder>>(decoderFactory);
@@ -1503,7 +1503,7 @@ public class SubsamplingScaleImageView extends View {
                 String sourceUri = source.toString();
                 Context context = contextRef.get();
                 DecoderFactory<? extends ImageRegionDecoder> decoderFactory = decoderFactoryRef.get();
-                SubsamplingScaleImageView view = viewRef.get();
+                SubSamplingScaleImageView view = viewRef.get();
                 if (context != null && decoderFactory != null && view != null) {
                     view.debug("TilesInitTask.doInBackground");
                     decoder = decoderFactory.make();
@@ -1526,7 +1526,7 @@ public class SubsamplingScaleImageView extends View {
 
         @Override
         protected void onPostExecute(int[] xyo) {
-            final SubsamplingScaleImageView view = viewRef.get();
+            final SubSamplingScaleImageView view = viewRef.get();
             if (view != null) {
                 if (decoder != null && xyo != null && xyo.length == 3) {
                     view.onTilesInited(decoder, xyo[0], xyo[1], xyo[2]);
@@ -1573,12 +1573,12 @@ public class SubsamplingScaleImageView extends View {
      * Async task used to load images without blocking the UI thread.
      */
     private static class TileLoadTask extends AsyncTask<Void, Void, Bitmap> {
-        private final WeakReference<SubsamplingScaleImageView> viewRef;
+        private final WeakReference<SubSamplingScaleImageView> viewRef;
         private final WeakReference<ImageRegionDecoder> decoderRef;
         private final WeakReference<Tile> tileRef;
         private Exception exception;
 
-        TileLoadTask(SubsamplingScaleImageView view, ImageRegionDecoder decoder, Tile tile) {
+        TileLoadTask(SubSamplingScaleImageView view, ImageRegionDecoder decoder, Tile tile) {
             this.viewRef = new WeakReference<>(view);
             this.decoderRef = new WeakReference<>(decoder);
             this.tileRef = new WeakReference<>(tile);
@@ -1588,7 +1588,7 @@ public class SubsamplingScaleImageView extends View {
         @Override
         protected Bitmap doInBackground(Void... params) {
             try {
-                SubsamplingScaleImageView view = viewRef.get();
+                SubSamplingScaleImageView view = viewRef.get();
                 ImageRegionDecoder decoder = decoderRef.get();
                 Tile tile = tileRef.get();
                 if (decoder != null && tile != null && view != null && decoder.isReady() && tile.visible) {
@@ -1616,7 +1616,7 @@ public class SubsamplingScaleImageView extends View {
 
         @Override
         protected void onPostExecute(Bitmap bitmap) {
-            final SubsamplingScaleImageView subsamplingScaleImageView = viewRef.get();
+            final SubSamplingScaleImageView subsamplingScaleImageView = viewRef.get();
             final Tile tile = tileRef.get();
             if (subsamplingScaleImageView != null && tile != null) {
                 if (bitmap != null) {
@@ -1655,7 +1655,7 @@ public class SubsamplingScaleImageView extends View {
      * Async task used to load bitmap without blocking the UI thread.
      */
     private static class BitmapLoadTask extends AsyncTask<Void, Void, Integer> {
-        private final WeakReference<SubsamplingScaleImageView> viewRef;
+        private final WeakReference<SubSamplingScaleImageView> viewRef;
         private final WeakReference<Context> contextRef;
         private final WeakReference<DecoderFactory<? extends ImageDecoder>> decoderFactoryRef;
         private final Uri source;
@@ -1663,7 +1663,7 @@ public class SubsamplingScaleImageView extends View {
         private Bitmap bitmap;
         private Exception exception;
 
-        BitmapLoadTask(SubsamplingScaleImageView view, Context context, DecoderFactory<? extends ImageDecoder> decoderFactory, Uri source, boolean preview) {
+        BitmapLoadTask(SubSamplingScaleImageView view, Context context, DecoderFactory<? extends ImageDecoder> decoderFactory, Uri source, boolean preview) {
             this.viewRef = new WeakReference<>(view);
             this.contextRef = new WeakReference<>(context);
             this.decoderFactoryRef = new WeakReference<DecoderFactory<? extends ImageDecoder>>(decoderFactory);
@@ -1677,7 +1677,7 @@ public class SubsamplingScaleImageView extends View {
                 String sourceUri = source.toString();
                 Context context = contextRef.get();
                 DecoderFactory<? extends ImageDecoder> decoderFactory = decoderFactoryRef.get();
-                SubsamplingScaleImageView view = viewRef.get();
+                SubSamplingScaleImageView view = viewRef.get();
                 if (context != null && decoderFactory != null && view != null) {
                     view.debug("BitmapLoadTask.doInBackground");
                     bitmap = decoderFactory.make().decode(context, source);
@@ -1695,7 +1695,7 @@ public class SubsamplingScaleImageView extends View {
 
         @Override
         protected void onPostExecute(Integer orientation) {
-            SubsamplingScaleImageView subsamplingScaleImageView = viewRef.get();
+            SubSamplingScaleImageView subsamplingScaleImageView = viewRef.get();
             if (subsamplingScaleImageView != null) {
                 if (bitmap != null && orientation != null) {
                     if (preview) {

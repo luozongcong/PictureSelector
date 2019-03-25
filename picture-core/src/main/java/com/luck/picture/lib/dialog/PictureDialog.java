@@ -12,12 +12,12 @@ public class PictureDialog extends Dialog {
     public Context context;
 
     public PictureDialog(Context context) {
-        super(context, R.style.picture_alert_dialog);
+        super(context, R.style.PictureAlertDialog);
         this.context = context;
         setCancelable(true);
         setCanceledOnTouchOutside(false);
         Window window = getWindow();
-        window.setWindowAnimations(R.style.DialogWindowStyle);
+        window.setWindowAnimations(R.style.Picture_DialogWindowStyle);
     }
 
 

@@ -56,15 +56,15 @@ public class FolderPopWindow extends PopupWindow implements View.OnClickListener
         this.setContentView(window);
         this.setWidth(ScreenUtils.getScreenWidth(context));
         this.setHeight(ScreenUtils.getScreenHeight(context));
-        this.setAnimationStyle(R.style.WindowStyle);
+        this.setAnimationStyle(R.style.Picture_WindowStyle);
         this.setFocusable(true);
         this.setOutsideTouchable(true);
         this.update();
         this.setBackgroundDrawable(new ColorDrawable(Color.argb(123, 0, 0, 0)));
         drawableUp = AttrsUtils.getTypeValuePopWindowImg(context, R.attr.picture_arrow_up_icon);
         drawableDown = AttrsUtils.getTypeValuePopWindowImg(context, R.attr.picture_arrow_down_icon);
-        animationIn = AnimationUtils.loadAnimation(context, R.anim.photo_album_show);
-        animationOut = AnimationUtils.loadAnimation(context, R.anim.photo_album_dismiss);
+        animationIn = AnimationUtils.loadAnimation(context, R.anim.pic_photo_album_show);
+        animationOut = AnimationUtils.loadAnimation(context, R.anim.pic_photo_album_dismiss);
         initView();
     }
 
@@ -74,7 +74,7 @@ public class FolderPopWindow extends PopupWindow implements View.OnClickListener
         recyclerView = (RecyclerView) window.findViewById(R.id.folder_list);
         recyclerView.getLayoutParams().height = (int) (ScreenUtils.getScreenHeight(context) * 0.6);
         recyclerView.addItemDecoration(new RecycleViewDivider(
-                context, LinearLayoutManager.HORIZONTAL, ScreenUtils.dip2px(context, 0), ContextCompat.getColor(context, R.color.transparent)));
+                context, LinearLayoutManager.HORIZONTAL, ScreenUtils.dip2px(context, 0), ContextCompat.getColor(context, R.color.picture_transparent)));
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
         recyclerView.setAdapter(adapter);
         id_ll_root.setOnClickListener(this);

@@ -8,7 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:src="@drawable/image_placeholder" />
+        android:src="@drawable/pic_image_placeholder" />
 
     <LinearLayout
         android:id="@+id/ll_check"
@@ -23,9 +23,9 @@
             android:id="@+id/check"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="?attr/picture.checked.style"
+            android:background="?attr/picture_checked_style"
             android:gravity="center"
-            android:textColor="@color/white"
+            android:textColor="@color/picture_white"
             android:textSize="12sp" />
     </LinearLayout>
 
@@ -35,9 +35,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:background="@drawable/gif_tag"
-        android:text="@string/gif_tag"
-        android:textColor="@color/white"
+        android:background="@drawable/pic_gif_tag"
+        android:text="@string/picture_gif_tag"
+        android:textColor="@color/picture_white"
         android:textSize="11sp"
         android:visibility="gone" />
 
@@ -47,9 +47,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:background="@drawable/gif_tag"
+        android:background="@drawable/pic_gif_tag"
         android:text="@string/picture_long_chart"
-        android:textColor="@color/white"
+        android:textColor="@color/picture_white"
         android:textSize="11sp"
         android:visibility="gone" />
 
@@ -58,14 +58,14 @@
         android:layout_width="match_parent"
         android:layout_height="30dp"
         android:layout_alignParentBottom="true"
-        android:background="@drawable/buybuybuy"
-        android:drawableLeft="@drawable/video_icon"
+        android:background="@drawable/pic_buybuybuy"
+        android:drawableLeft="@drawable/pic_video_icon"
         android:drawablePadding="5dp"
         android:gravity="center_vertical"
         android:paddingLeft="5dp"
         android:paddingTop="8dp"
         android:text="00:00"
-        android:textColor="@color/white"
+        android:textColor="@color/picture_white"
         android:textSize="11sp"
         android:visibility="gone" />
 </com.luck.picture.lib.widget.SquareRelativeLayout>

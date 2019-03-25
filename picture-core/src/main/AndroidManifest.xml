@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.luck.picture.lib">
 
-    <application android:theme="@style/AppTheme">
+    <application android:theme="@style/PictureAppTheme">
 
         <provider
             android:name="com.luck.picture.lib.PictureFileProvider"
@@ -11,7 +11,7 @@
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/file_paths" />
+                android:resource="@xml/pic_file_paths" />
         </provider>
         <activity
             android:name=".PictureSelectorActivity"

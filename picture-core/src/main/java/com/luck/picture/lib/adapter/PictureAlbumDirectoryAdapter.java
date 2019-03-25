@@ -73,10 +73,10 @@ public class PictureAlbumDirectoryAdapter extends RecyclerView.Adapter<PictureAl
         holder.tv_sign.setVisibility(checkedNum > 0 ? View.VISIBLE : View.INVISIBLE);
         holder.itemView.setSelected(isChecked);
         if (mimeType == PictureMimeType.ofAudio()) {
-            holder.first_image.setImageResource(R.drawable.audio_placeholder);
+            holder.first_image.setImageResource(R.drawable.pic_audio_placeholder);
         } else {
             RequestOptions options = new RequestOptions()
-                    .placeholder(R.drawable.ic_placeholder)
+                    .placeholder(R.drawable.pic_ic_placeholder)
                     .centerCrop()
                     .sizeMultiplier(0.5f)
                     .diskCacheStrategy(DiskCacheStrategy.ALL)

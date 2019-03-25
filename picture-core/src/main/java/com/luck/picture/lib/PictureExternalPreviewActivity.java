@@ -41,7 +41,7 @@ import com.luck.picture.lib.tools.ToastManage;
 import com.luck.picture.lib.widget.PreviewViewPager;
 import com.luck.picture.lib.widget.longimage.ImageSource;
 import com.luck.picture.lib.widget.longimage.ImageViewState;
-import com.luck.picture.lib.widget.longimage.SubsamplingScaleImageView;
+import com.luck.picture.lib.widget.longimage.SubSamplingScaleImageView;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
@@ -113,7 +113,7 @@ public class PictureExternalPreviewActivity extends PictureBaseActivity implemen
     @Override
     public void onClick(View v) {
         finish();
-        overridePendingTransition(0, R.anim.a3);
+        overridePendingTransition(0, R.anim.pic_a3);
     }
 
     public class SimpleFragmentAdapter extends PagerAdapter {
@@ -139,7 +139,7 @@ public class PictureExternalPreviewActivity extends PictureBaseActivity implemen
             // 常规图控件
             final PhotoView imageView = (PhotoView) contentView.findViewById(R.id.preview_image);
             // 长图控件
-            final SubsamplingScaleImageView longImg = (SubsamplingScaleImageView) contentView.findViewById(R.id.longImg);
+            final SubSamplingScaleImageView longImg = (SubSamplingScaleImageView) contentView.findViewById(R.id.longImg);
 
             LocalMedia media = images.get(position);
             if (media != null) {
@@ -219,14 +219,14 @@ public class PictureExternalPreviewActivity extends PictureBaseActivity implemen
                     @Override
                     public void onViewTap(View view, float x, float y) {
                         finish();
-                        overridePendingTransition(0, R.anim.a3);
+                        overridePendingTransition(0, R.anim.pic_a3);
                     }
                 });
                 longImg.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         finish();
-                        overridePendingTransition(0, R.anim.a3);
+                        overridePendingTransition(0, R.anim.pic_a3);
                     }
                 });
                 imageView.setOnLongClickListener(new View.OnLongClickListener() {
@@ -273,13 +273,13 @@ public class PictureExternalPreviewActivity extends PictureBaseActivity implemen
      * @param bmp
      * @param longImg
      */
-    private void displayLongPic(Bitmap bmp, SubsamplingScaleImageView longImg) {
+    private void displayLongPic(Bitmap bmp, SubSamplingScaleImageView longImg) {
         longImg.setQuickScaleEnabled(true);
         longImg.setZoomEnabled(true);
         longImg.setPanEnabled(true);
         longImg.setDoubleTapZoomDuration(100);
-        longImg.setMinimumScaleType(SubsamplingScaleImageView.SCALE_TYPE_CENTER_CROP);
-        longImg.setDoubleTapZoomDpi(SubsamplingScaleImageView.ZOOM_FOCUS_CENTER);
+        longImg.setMinimumScaleType(SubSamplingScaleImageView.SCALE_TYPE_CENTER_CROP);
+        longImg.setDoubleTapZoomDpi(SubSamplingScaleImageView.ZOOM_FOCUS_CENTER);
         longImg.setImage(ImageSource.cachedBitmap(bmp), new ImageViewState(0, new PointF(0, 0), 0));
     }
 
@@ -290,7 +290,7 @@ public class PictureExternalPreviewActivity extends PictureBaseActivity implemen
         final CustomDialog dialog = new CustomDialog(PictureExternalPreviewActivity.this,
                 ScreenUtils.getScreenWidth(PictureExternalPreviewActivity.this) * 3 / 4,
                 ScreenUtils.getScreenHeight(PictureExternalPreviewActivity.this) / 4,
-                R.layout.picture_wind_base_dialog_xml, R.style.Theme_dialog);
+                R.layout.picture_wind_base_dialog_xml, R.style.PictureThemeDialog);
         Button btn_cancel = (Button) dialog.findViewById(R.id.btn_cancel);
         Button btn_commit = (Button) dialog.findViewById(R.id.btn_commit);
         TextView tv_title = (TextView) dialog.findViewById(R.id.tv_title);
@@ -401,7 +401,7 @@ public class PictureExternalPreviewActivity extends PictureBaseActivity implemen
     public void onBackPressed() {
         super.onBackPressed();
         finish();
-        overridePendingTransition(0, R.anim.a3);
+        overridePendingTransition(0, R.anim.pic_a3);
     }
 
     @Override

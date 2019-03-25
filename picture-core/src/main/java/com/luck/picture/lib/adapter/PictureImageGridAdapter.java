@@ -82,7 +82,7 @@ public class PictureImageGridAdapter extends RecyclerView.Adapter<RecyclerView.V
         this.sizeMultiplier = config.sizeMultiplier;
         this.mimeType = config.mimeType;
         this.zoomAnim = config.zoomAnim;
-        animation = OptAnimationLoader.loadAnimation(context, R.anim.modal_in);
+        animation = OptAnimationLoader.loadAnimation(context, R.anim.pic_modal_in);
     }
 
     public void setShowCamera(boolean showCamera) {
@@ -170,10 +170,10 @@ public class PictureImageGridAdapter extends RecyclerView.Adapter<RecyclerView.V
             contentHolder.tv_isGif.setVisibility(gif ? View.VISIBLE : View.GONE);
             if (mimeType == PictureMimeType.ofAudio()) {
                 contentHolder.tv_duration.setVisibility(View.VISIBLE);
-                Drawable drawable = ContextCompat.getDrawable(context, R.drawable.picture_audio);
+                Drawable drawable = ContextCompat.getDrawable(context, R.drawable.pic_ic_audio);
                 StringUtils.modifyTextViewDrawable(contentHolder.tv_duration, drawable, 0);
             } else {
-                Drawable drawable = ContextCompat.getDrawable(context, R.drawable.video_icon);
+                Drawable drawable = ContextCompat.getDrawable(context, R.drawable.pic_video_icon);
                 StringUtils.modifyTextViewDrawable(contentHolder.tv_duration, drawable, 0);
                 contentHolder.tv_duration.setVisibility(mediaMimeType == PictureConfig.TYPE_VIDEO
                         ? View.VISIBLE : View.GONE);
@@ -183,7 +183,7 @@ public class PictureImageGridAdapter extends RecyclerView.Adapter<RecyclerView.V
             long duration = image.getDuration();
             contentHolder.tv_duration.setText(DateUtils.timeParse(duration));
             if (mimeType == PictureMimeType.ofAudio()) {
-                contentHolder.iv_picture.setImageResource(R.drawable.audio_placeholder);
+                contentHolder.iv_picture.setImageResource(R.drawable.pic_audio_placeholder);
             } else {
                 RequestOptions options = new RequestOptions();
                 if (overrideWidth <= 0 && overrideHeight <= 0) {
@@ -193,7 +193,7 @@ public class PictureImageGridAdapter extends RecyclerView.Adapter<RecyclerView.V
                 }
                 options.diskCacheStrategy(DiskCacheStrategy.ALL);
                 options.centerCrop();
-                options.placeholder(R.drawable.image_placeholder);
+                options.placeholder(R.drawable.pic_image_placeholder);
                 Glide.with(context)
                         .asBitmap()
                         .load(path)
@@ -397,10 +397,10 @@ public class PictureImageGridAdapter extends RecyclerView.Adapter<RecyclerView.V
                 }
             }
             holder.iv_picture.setColorFilter(ContextCompat.getColor
-                    (context, R.color.image_overlay_true), PorterDuff.Mode.SRC_ATOP);
+                    (context, R.color.picture_image_overlay_true), PorterDuff.Mode.SRC_ATOP);
         } else {
             holder.iv_picture.setColorFilter(ContextCompat.getColor
-                    (context, R.color.image_overlay_false), PorterDuff.Mode.SRC_ATOP);
+                    (context, R.color.picture_image_overlay_false), PorterDuff.Mode.SRC_ATOP);
         }
     }
 

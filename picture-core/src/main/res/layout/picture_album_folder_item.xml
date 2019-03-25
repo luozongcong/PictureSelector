@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/item_select_bg"
+    android:background="@drawable/pic_item_select_bg"
     android:orientation="vertical"
     android:padding="6dp">
 
@@ -23,7 +23,7 @@
             android:layout_height="12dp"
             android:layout_alignParentRight="true"
             android:layout_margin="4dp"
-            android:background="?attr/picture.folder_checked_dot"
+            android:background="?attr/picture_folder_checked_dot"
             android:visibility="invisible" />
 
     </RelativeLayout>
@@ -36,7 +36,7 @@
         android:layout_marginTop="5dp"
         android:layout_toRightOf="@id/rl_first_image"
         android:text="相机胶卷"
-        android:textColor="@color/color_4d"
+        android:textColor="@color/picture_color_4d"
         android:textSize="16sp" />
 
     <TextView
@@ -47,7 +47,7 @@
         android:layout_marginTop="5dp"
         android:layout_toRightOf="@id/tv_folder_name"
         android:text="(0)"
-        android:textColor="@color/color_4d"
+        android:textColor="@color/picture_color_4d"
         android:textSize="14sp" />
 
 

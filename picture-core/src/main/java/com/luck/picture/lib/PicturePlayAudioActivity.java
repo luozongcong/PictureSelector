@@ -24,7 +24,7 @@ public class PicturePlayAudioActivity extends PictureBaseActivity implements Vie
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN
                 , WindowManager.LayoutParams.FLAG_FULLSCREEN);
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_picture_play_audio);
+        setContentView(R.layout.picture_activity_picture_play_audio);
         audio_path = getIntent().getStringExtra("audio_path");
         tv_musicStatus = (TextView) findViewById(R.id.tv_musicStatus);
         tv_musicTime = (TextView) findViewById(R.id.tv_musicTime);

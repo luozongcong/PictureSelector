@@ -6,7 +6,7 @@
     <solid android:color="@color/color_c51" />
     <stroke
         android:width="0.5dp"
-        android:color="@color/white" />
+        android:color="@color/picture_white" />
     <size
         android:width="18dp"
         android:height="18dp" />

@@ -10,7 +10,7 @@
         android:layout_gravity="center"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:background="@drawable/dialog_shadow"
+        android:background="@drawable/pic_dialog_shadow"
         android:gravity="center"
         android:orientation="vertical"
         android:paddingBottom="15dp"
@@ -21,7 +21,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="播放"
-            android:textColor="@color/tab_color_false"
+            android:textColor="@color/picture_tab_color_false"
             android:textSize="14sp" />
 
         <RelativeLayout
@@ -38,7 +38,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:text="00:00"
-                android:textColor="@color/tab_color_false"
+                android:textColor="@color/picture_tab_color_false"
                 android:textSize="12sp" />
 
 
@@ -54,8 +54,8 @@
                 android:max="100"
                 android:maxHeight="4.0dp"
                 android:minHeight="4.0dp"
-                android:progressDrawable="@drawable/picture_layer_progress"
-                android:thumb="@drawable/picture_sb_thumb"
+                android:progressDrawable="@drawable/pic_layer_progress"
+                android:thumb="@drawable/pic_selector_sb_thumb"
                 android:thumbOffset="0dp" />
 
             <!--显示总进度-->
@@ -66,7 +66,7 @@
                 android:layout_centerVertical="true"
                 android:layout_toRightOf="@+id/musicSeekBar"
                 android:text="00:00"
-                android:textColor="@color/tab_color_false"
+                android:textColor="@color/picture_tab_color_false"
                 android:textSize="12sp" />
 
         </RelativeLayout>
@@ -84,10 +84,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="25dp"
                 android:layout_weight="1"
-                android:background="@drawable/picture_btn_music_shape"
+                android:background="@drawable/pic_btn_music_shape"
                 android:gravity="center"
                 android:text="@string/picture_play_audio"
-                android:textColor="@color/white"
+                android:textColor="@color/picture_white"
                 android:textSize="14sp" />
 
             <TextView
@@ -96,10 +96,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
                 android:layout_weight="1"
-                android:background="@drawable/picture_btn_music_shape"
+                android:background="@drawable/pic_btn_music_shape"
                 android:gravity="center"
                 android:text="@string/picture_stop_audio"
-                android:textColor="@color/white"
+                android:textColor="@color/picture_white"
                 android:textSize="14sp" />
 
             <TextView
@@ -109,10 +109,10 @@
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="25dp"
                 android:layout_weight="1"
-                android:background="@drawable/picture_btn_music_shape"
+                android:background="@drawable/pic_btn_music_shape"
                 android:gravity="center"
                 android:text="@string/picture_quit_audio"
-                android:textColor="@color/white"
+                android:textColor="@color/picture_white"
                 android:textSize="14sp" />
         </LinearLayout>
     </LinearLayout>

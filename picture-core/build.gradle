@@ -12,6 +12,9 @@ android {
     lintOptions {
         abortOnError false
     }
+
+    resourcePrefix 'pic_'
+
 }
 
 dependencies {

@@ -292,9 +292,9 @@ public class PictureSelectorActivity extends PictureBaseActivity implements View
                 0, config.selectionMode == PictureConfig.SINGLE ? 1 : config.maxSelectNum)
                 : getString(R.string.picture_please_select));
         if (!numComplete) {
-            animation = AnimationUtils.loadAnimation(this, R.anim.modal_in);
+            animation = AnimationUtils.loadAnimation(this, R.anim.pic_modal_in);
         }
-        animation = numComplete ? null : AnimationUtils.loadAnimation(this, R.anim.modal_in);
+        animation = numComplete ? null : AnimationUtils.loadAnimation(this, R.anim.pic_modal_in);
     }
 
     /**
@@ -484,7 +484,7 @@ public class PictureSelectorActivity extends PictureBaseActivity implements View
             bundle.putBoolean(PictureConfig.EXTRA_BOTTOM_PREVIEW, true);
             startActivity(PicturePreviewActivity.class, bundle,
                     config.selectionMode == PictureConfig.SINGLE ? UCrop.REQUEST_CROP : UCropMulti.REQUEST_MULTI_CROP);
-            overridePendingTransition(R.anim.a5, 0);
+            overridePendingTransition(R.anim.pic_a5, 0);
         }
 
         if (id == R.id.id_ll_ok) {
@@ -532,8 +532,8 @@ public class PictureSelectorActivity extends PictureBaseActivity implements View
         audioDialog = new CustomDialog(mContext,
                 LinearLayout.LayoutParams.MATCH_PARENT, audioH
                 ,
-                R.layout.picture_audio_dialog, R.style.Theme_dialog);
-        audioDialog.getWindow().setWindowAnimations(R.style.Dialog_Audio_StyleAnim);
+                R.layout.picture_audio_dialog, R.style.PictureThemeDialog);
+        audioDialog.getWindow().setWindowAnimations(R.style.Picture_Dialog_Audio_StyleAnim);
         tv_musicStatus = (TextView) audioDialog.findViewById(R.id.tv_musicStatus);
         tv_musicTime = (TextView) audioDialog.findViewById(R.id.tv_musicTime);
         musicSeekBar = (SeekBar) audioDialog.findViewById(R.id.musicSeekBar);
@@ -803,7 +803,7 @@ public class PictureSelectorActivity extends PictureBaseActivity implements View
                 bundle.putInt(PictureConfig.EXTRA_POSITION, position);
                 startActivity(PicturePreviewActivity.class, bundle,
                         config.selectionMode == PictureConfig.SINGLE ? UCrop.REQUEST_CROP : UCropMulti.REQUEST_MULTI_CROP);
-                overridePendingTransition(R.anim.a5, 0);
+                overridePendingTransition(R.anim.pic_a5, 0);
                 break;
             case PictureConfig.TYPE_VIDEO:
                 // video

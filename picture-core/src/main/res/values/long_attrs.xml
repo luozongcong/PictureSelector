@@ -16,13 +16,13 @@ limitations under the License.
 -->
 <resources>
 
-    <declare-styleable name="SubsamplingScaleImageView">
-        <attr name="src" format="reference"/>
-        <attr name="assetName" format="string"/>
-        <attr name="panEnabled" format="boolean"/>
-        <attr name="zoomEnabled" format="boolean"/>
-        <attr name="quickScaleEnabled" format="boolean"/>
-        <attr name="tileBackgroundColor" format="color"/>
+    <declare-styleable name="PicSubSamplingScaleImageView">
+        <attr name="pic_src" format="reference"/>
+        <attr name="pic_assetName" format="string"/>
+        <attr name="pic_panEnabled" format="boolean"/>
+        <attr name="pic_zoomEnabled" format="boolean"/>
+        <attr name="pic_quickScaleEnabled" format="boolean"/>
+        <attr name="pic_tileBackgroundColor" format="color"/>
     </declare-styleable>
 
 </resources>
