@@ -50,9 +50,24 @@ public class PictureFileUtils {
 
     public static final String POSTFIX = ".JPEG";
     public static final String POST_VIDEO = ".mp4";
-    public static final String APP_NAME = "PictureSelector";
-    public static final String CAMERA_PATH = "/" + APP_NAME + "/CameraImage/";
-    public static final String CROP_PATH = "/" + APP_NAME + "/CropImage/";
+    public static String APP_NAME = "PictureSelector";
+    public static String CAMERA_PATH = "/" + APP_NAME + "/CameraImage/";
+    public static String CROP_PATH = "/" + APP_NAME + "/CropImage/";
+
+    /**
+     * 设置应用名
+     *
+     * @param appName
+     */
+    public static void setAppName(String appName) {
+        APP_NAME = appName;
+        CAMERA_PATH = "/" + APP_NAME + "/CameraImage/";
+        CROP_PATH = "/" + APP_NAME + "/CropImage/";
+    }
+
+    private PictureFileUtils() {
+        throw new UnsupportedOperationException("u can't instantiate me...");
+    }
 
     /**
      * @param context
@@ -109,9 +124,6 @@ public class PictureFileUtils {
      * TAG for log messages.
      */
     static final String TAG = "PictureFileUtils";
-
-    private PictureFileUtils() {
-    }
 
     /**
      * @param uri The Uri to check.

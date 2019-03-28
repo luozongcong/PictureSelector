@@ -268,7 +268,7 @@ public class PictureBaseActivity extends FragmentActivity {
                 // 如果是网络图片则不压缩
                 boolean http = PictureMimeType.isHttp(path);
                 boolean eqTrue = !TextUtils.isEmpty(path) && http;
-                image.setCompressed(eqTrue ? false : true);
+                image.setCompressed(!eqTrue);
                 image.setCompressPath(eqTrue ? "" : path);
             }
         }

@@ -40,6 +40,7 @@ import com.luck.picture.lib.permissions.RxPermissions;
 import com.luck.picture.lib.rxbus2.RxBus;
 import com.luck.picture.lib.rxbus2.Subscribe;
 import com.luck.picture.lib.rxbus2.ThreadMode;
+import com.luck.picture.lib.tools.CameraUtils;
 import com.luck.picture.lib.tools.DateUtils;
 import com.luck.picture.lib.tools.DoubleUtils;
 import com.luck.picture.lib.tools.PictureFileUtils;
@@ -375,7 +376,7 @@ public class PictureSelectorActivity extends PictureBaseActivity implements View
                     type,
                     outputCameraPath, config.suffixType);
             cameraPath = cameraFile.getAbsolutePath();
-            Uri imageUri = parUri(cameraFile);
+            Uri imageUri = CameraUtils.parUri(this, cameraFile);
             cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri);
             startActivityForResult(cameraIntent, PictureConfig.REQUEST_CAMERA);
         }
@@ -391,7 +392,7 @@ public class PictureSelectorActivity extends PictureBaseActivity implements View
                             PictureConfig.TYPE_ALL ? PictureConfig.TYPE_VIDEO : config.mimeType,
                     outputCameraPath, config.suffixType);
             cameraPath = cameraFile.getAbsolutePath();
-            Uri imageUri = parUri(cameraFile);
+            Uri imageUri = CameraUtils.parUri(this, cameraFile);
             cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri);
             cameraIntent.putExtra(MediaStore.EXTRA_DURATION_LIMIT, config.recordVideoSecond);
             cameraIntent.putExtra(MediaStore.EXTRA_VIDEO_QUALITY, config.videoQuality);
@@ -429,25 +430,6 @@ public class PictureSelectorActivity extends PictureBaseActivity implements View
             }
         });
     }
-
-    /**
-     * 生成uri
-     *
-     * @param cameraFile
-     * @return
-     */
-    private Uri parUri(File cameraFile) {
-        Uri imageUri;
-        String authority = getPackageName() + ".provider";
-        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M) {
-            //通过FileProvider创建一个content类型的Uri
-            imageUri = FileProvider.getUriForFile(mContext, authority, cameraFile);
-        } else {
-            imageUri = Uri.fromFile(cameraFile);
-        }
-        return imageUri;
-    }
-
 
     @Override
     public void onClick(View v) {
