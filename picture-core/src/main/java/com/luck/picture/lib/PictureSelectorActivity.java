@@ -14,6 +14,7 @@ import android.support.v4.content.FileProvider;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SimpleItemAnimator;
+import android.text.TextPaint;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
@@ -40,6 +41,7 @@ import com.luck.picture.lib.permissions.RxPermissions;
 import com.luck.picture.lib.rxbus2.RxBus;
 import com.luck.picture.lib.rxbus2.Subscribe;
 import com.luck.picture.lib.rxbus2.ThreadMode;
+import com.luck.picture.lib.tools.AttrsUtils;
 import com.luck.picture.lib.tools.CameraUtils;
 import com.luck.picture.lib.tools.DateUtils;
 import com.luck.picture.lib.tools.DoubleUtils;
@@ -195,6 +197,16 @@ public class PictureSelectorActivity extends PictureBaseActivity implements View
         picture_left_back = (ImageView) findViewById(R.id.picture_left_back);
         picture_title = (TextView) findViewById(R.id.picture_title);
         picture_right = (TextView) findViewById(R.id.picture_right);
+        boolean isTitleTextBold = AttrsUtils.getTypeValueBoolean(this, R.attr.picture_title_text_bold);
+        if (isTitleTextBold) {
+            TextPaint tp = picture_title.getPaint();
+            tp.setFakeBoldText(true);
+        }
+        boolean isRightTextBold = AttrsUtils.getTypeValueBoolean(this, R.attr.picture_right_text_bold);
+        if (isRightTextBold) {
+            TextPaint tp = picture_right.getPaint();
+            tp.setFakeBoldText(true);
+        }
         picture_tv_ok = (TextView) findViewById(R.id.picture_tv_ok);
         picture_id_preview = (TextView) findViewById(R.id.picture_id_preview);
         picture_tv_img_num = (TextView) findViewById(R.id.picture_tv_img_num);

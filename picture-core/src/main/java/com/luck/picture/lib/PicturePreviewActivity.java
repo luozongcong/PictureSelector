@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v4.view.ViewPager;
+import android.text.TextPaint;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.animation.Animation;
@@ -22,6 +23,7 @@ import com.luck.picture.lib.observable.ImagesObservable;
 import com.luck.picture.lib.rxbus2.RxBus;
 import com.luck.picture.lib.rxbus2.Subscribe;
 import com.luck.picture.lib.rxbus2.ThreadMode;
+import com.luck.picture.lib.tools.AttrsUtils;
 import com.luck.picture.lib.tools.ScreenUtils;
 import com.luck.picture.lib.tools.ToastManage;
 import com.luck.picture.lib.tools.VoiceUtils;
@@ -101,6 +103,11 @@ public class PicturePreviewActivity extends PictureBaseActivity implements
         id_ll_ok.setOnClickListener(this);
         tv_img_num = (TextView) findViewById(R.id.tv_img_num);
         tv_title = (TextView) findViewById(R.id.picture_title);
+        boolean isTextBold = AttrsUtils.getTypeValueBoolean(this, R.attr.picture_ac_preview_title_text_bold);
+        if (isTextBold) {
+            TextPaint tp = tv_title.getPaint();
+            tp.setFakeBoldText(true);
+        }
         position = getIntent().getIntExtra(PictureConfig.EXTRA_POSITION, 0);
         tv_ok.setText(numComplete ? getString(R.string.picture_done_front_num,
                 0, config.selectionMode == PictureConfig.SINGLE ? 1 : config.maxSelectNum)

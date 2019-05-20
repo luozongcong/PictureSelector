@@ -16,8 +16,12 @@
 
     <attr name="picture_title_textColor" format="reference|color" />
     <attr name="picture_title_textSize" format="dimension" />
+    <!--字体是否加粗-->
+    <attr name="picture_title_text_bold" format="boolean" />
     <attr name="picture_right_textColor" format="reference|color" />
     <attr name="picture_right_textSize" format="dimension" />
+    <!--字体是否加粗-->
+    <attr name="picture_right_text_bold" format="boolean" />
     <attr name="picture_leftBack_icon" format="reference" />
     <attr name="picture_title_action_padding" format="dimension" />
     <attr name="picture_arrow_down_icon" format="reference" />
@@ -28,6 +32,9 @@
     <attr name="picture_preview_textColor" format="reference|color" />
     <attr name="picture_complete_textColor" format="reference|color" />
     <attr name="picture_ac_preview_title_textColor" format="reference|color" />
+    <attr name="picture_ac_preview_title_textSize" format="dimension" />
+    <!--字体是否加粗-->
+    <attr name="picture_ac_preview_title_text_bold" format="boolean" />
     <attr name="picture_ac_preview_complete_textColor" format="reference|color" />
     <attr name="picture_ac_preview_bottom_bg" format="reference|color" />
     <attr name="picture_status_color" format="reference|color" />

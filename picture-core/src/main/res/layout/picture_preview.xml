@@ -29,7 +29,7 @@
             android:ellipsize="end"
             android:maxEms="11"
             android:textColor="?attr/picture_ac_preview_title_textColor"
-            android:textSize="18sp" />
+            android:textSize="?attr/picture_ac_preview_title_textSize" />
 
         <LinearLayout
             android:id="@+id/ll_check"

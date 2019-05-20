@@ -10,6 +10,7 @@ import android.os.Message;
 import android.support.annotation.Nullable;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.text.TextPaint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,6 +36,7 @@ import com.luck.picture.lib.entity.LocalMedia;
 import com.luck.picture.lib.permissions.RxPermissions;
 import com.luck.picture.lib.photoview.OnViewTapListener;
 import com.luck.picture.lib.photoview.PhotoView;
+import com.luck.picture.lib.tools.AttrsUtils;
 import com.luck.picture.lib.tools.PictureFileUtils;
 import com.luck.picture.lib.tools.ScreenUtils;
 import com.luck.picture.lib.tools.ToastManage;
@@ -90,6 +92,11 @@ public class PictureExternalPreviewActivity extends PictureBaseActivity implemen
 
     private void initViewPageAdapterData() {
         tv_title.setText(position + 1 + "/" + images.size());
+        boolean isTextBold = AttrsUtils.getTypeValueBoolean(this, R.attr.picture_ac_preview_title_text_bold);
+        if (isTextBold) {
+            TextPaint tp = tv_title.getPaint();
+            tp.setFakeBoldText(true);
+        }
         adapter = new SimpleFragmentAdapter();
         viewPager.setAdapter(adapter);
         viewPager.setCurrentItem(position);
