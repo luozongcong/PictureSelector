@@ -12,9 +12,9 @@
     <style name="picture.white.style" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
         <!--标题栏背景色-->
-        <item name="colorPrimary">#F7F7F7</item>
+        <item name="colorPrimary">@color/white</item>
         <!--状态栏背景色-->
-        <item name="colorPrimaryDark">#F7F7F7</item>
+        <item name="colorPrimaryDark">@color/white</item>
         <!--是否改变图片列表界面状态栏字体颜色为黑色-->
         <item name="picture_statusFontColor">true</item>
         <!--返回键图标-->

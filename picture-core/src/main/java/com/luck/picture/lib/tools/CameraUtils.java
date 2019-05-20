@@ -1,13 +1,14 @@
 package com.luck.picture.lib.tools;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
 import android.provider.MediaStore;
 import android.support.v4.app.Fragment;
-import android.support.v4.content.FileProvider;
 
+import com.luck.picture.lib.PictureFileProvider;
 import com.luck.picture.lib.config.PictureConfig;
 
 import java.io.File;
@@ -43,6 +44,42 @@ public final class CameraUtils {
     }
 
     /**
+     * 打开照相机
+     */
+    public static void startOpenCamera(Fragment fragment, String path, OnOpenCameraListener listener) {
+        Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        if (cameraIntent.resolveActivity(fragment.getContext().getPackageManager()) != null) {
+            File cameraFile = PictureFileUtils.createCameraFile(fragment.getContext(),
+                    PictureConfig.TYPE_IMAGE,
+                    path, PictureFileUtils.POSTFIX);
+            Uri imageUri = parUri(fragment.getContext(), cameraFile);
+            cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri);
+            if (listener != null) {
+                listener.onOpenCamera(cameraFile);
+            }
+            fragment.startActivityForResult(cameraIntent, PictureConfig.REQUEST_CAMERA);
+        }
+    }
+
+    /**
+     * 打开照相机
+     */
+    public static void startOpenCamera(Activity activity, String path, OnOpenCameraListener listener) {
+        Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        if (cameraIntent.resolveActivity(activity.getPackageManager()) != null) {
+            File cameraFile = PictureFileUtils.createCameraFile(activity,
+                    PictureConfig.TYPE_IMAGE,
+                    path, PictureFileUtils.POSTFIX);
+            Uri imageUri = parUri(activity, cameraFile);
+            cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri);
+            if (listener != null) {
+                listener.onOpenCamera(cameraFile);
+            }
+            activity.startActivityForResult(cameraIntent, PictureConfig.REQUEST_CAMERA);
+        }
+    }
+
+    /**
      * 生成uri
      *
      * @param cameraFile
@@ -53,11 +90,24 @@ public final class CameraUtils {
         String authority = context.getPackageName() + ".provider";
         if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M) {
             //通过FileProvider创建一个content类型的Uri
-            imageUri = FileProvider.getUriForFile(context, authority, cameraFile);
+            imageUri = PictureFileProvider.getUriForFile(context, authority, cameraFile);
         } else {
             imageUri = Uri.fromFile(cameraFile);
         }
         return imageUri;
+    }
+
+
+    /**
+     * 调用系统照相机拍摄的监听
+     */
+    public interface OnOpenCameraListener {
+        /**
+         * 开启照相机
+         *
+         * @param cameraFile
+         */
+        void onOpenCamera(File cameraFile);
     }
 
 }
