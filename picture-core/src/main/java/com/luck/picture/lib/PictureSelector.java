@@ -16,6 +16,8 @@ import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.luck.picture.lib.PictureVideoPlayActivity.KEY_VIDEO_PATH;
+
 /**
  * author：luck
  * project：PictureSelector
@@ -24,7 +26,6 @@ import java.util.List;
  * email：893855882@qq.com
  * data：2017/5/24
  */
-
 public final class PictureSelector {
 
     private final WeakReference<Activity> mActivity;
@@ -120,8 +121,7 @@ public final class PictureSelector {
     public static List<LocalMedia> obtainSelectorList(Bundle bundle) {
         List<LocalMedia> selectionMedias;
         if (bundle != null) {
-            selectionMedias = (List<LocalMedia>) bundle
-                    .getSerializable(PictureConfig.EXTRA_SELECT_LIST);
+            selectionMedias = (List<LocalMedia>) bundle.getSerializable(PictureConfig.EXTRA_SELECT_LIST);
             return selectionMedias;
         }
         selectionMedias = new ArrayList<>();
@@ -147,8 +147,11 @@ public final class PictureSelector {
             Intent intent = new Intent(getActivity(), PictureExternalPreviewActivity.class);
             intent.putExtra(PictureConfig.EXTRA_PREVIEW_SELECT_LIST, (Serializable) medias);
             intent.putExtra(PictureConfig.EXTRA_POSITION, position);
-            getActivity().startActivity(intent);
-            getActivity().overridePendingTransition(R.anim.pic_a5, 0);
+            Activity activity = mActivity.get();
+            if (activity != null) {
+                activity.startActivity(intent);
+                activity.overridePendingTransition(R.anim.pic_a5, 0);
+            }
         }
     }
 
@@ -165,8 +168,11 @@ public final class PictureSelector {
             intent.putExtra(PictureConfig.EXTRA_PREVIEW_SELECT_LIST, (Serializable) medias);
             intent.putExtra(PictureConfig.EXTRA_POSITION, position);
             intent.putExtra(PictureConfig.DIRECTORY_PATH, directory_path);
-            getActivity().startActivity(intent);
-            getActivity().overridePendingTransition(R.anim.pic_a5, 0);
+            Activity activity = mActivity.get();
+            if (activity != null) {
+                activity.startActivity(intent);
+                activity.overridePendingTransition(R.anim.pic_a5, 0);
+            }
         }
     }
 
@@ -178,8 +184,11 @@ public final class PictureSelector {
     public void externalPictureVideo(String path) {
         if (!DoubleUtils.isFastDoubleClick()) {
             Intent intent = new Intent(getActivity(), PictureVideoPlayActivity.class);
-            intent.putExtra("video_path", path);
-            getActivity().startActivity(intent);
+            intent.putExtra(KEY_VIDEO_PATH, path);
+            Activity activity = mActivity.get();
+            if (activity != null) {
+                activity.startActivity(intent);
+            }
         }
     }
 
@@ -192,8 +201,11 @@ public final class PictureSelector {
         if (!DoubleUtils.isFastDoubleClick()) {
             Intent intent = new Intent(getActivity(), PicturePlayAudioActivity.class);
             intent.putExtra("audio_path", path);
-            getActivity().startActivity(intent);
-            getActivity().overridePendingTransition(R.anim.pic_a5, 0);
+            Activity activity = mActivity.get();
+            if (activity != null) {
+                activity.startActivity(intent);
+                activity.overridePendingTransition(R.anim.pic_a5, 0);
+            }
         }
     }
 

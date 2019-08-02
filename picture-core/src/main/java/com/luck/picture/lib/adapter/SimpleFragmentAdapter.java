@@ -30,6 +30,8 @@ import com.luck.picture.lib.widget.longimage.SubSamplingScaleImageView;
 
 import java.util.List;
 
+import static com.luck.picture.lib.PictureVideoPlayActivity.KEY_VIDEO_PATH;
+
 /**
  * @author：luck
  * @data：2018/1/27 下午7:50
@@ -153,7 +155,7 @@ public class SimpleFragmentAdapter extends PagerAdapter {
                 public void onClick(View v) {
                     Intent intent = new Intent();
                     Bundle bundle = new Bundle();
-                    bundle.putString("video_path", path);
+                    bundle.putString(KEY_VIDEO_PATH, path);
                     intent.putExtras(bundle);
                     intent.setClass(mContext, PictureVideoPlayActivity.class);
                     mContext.startActivity(intent);

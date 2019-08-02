@@ -63,6 +63,8 @@ import java.util.List;
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
 
+import static com.luck.picture.lib.PictureVideoPlayActivity.KEY_VIDEO_PATH;
+
 /**
  * @author：luck
  * @data：2018/1/27 19:12
@@ -805,7 +807,7 @@ public class PictureSelectorActivity extends PictureBaseActivity implements View
                     result.add(media);
                     onResult(result);
                 } else {
-                    bundle.putString("video_path", media.getPath());
+                    bundle.putString(KEY_VIDEO_PATH, media.getPath());
                     startActivity(PictureVideoPlayActivity.class, bundle);
                 }
                 break;
