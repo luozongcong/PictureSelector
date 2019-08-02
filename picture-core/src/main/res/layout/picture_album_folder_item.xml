@@ -12,7 +12,7 @@
         android:layout_height="50dp"
         android:layout_centerVertical="true">
 
-        <ImageView
+        <android.support.v7.widget.AppCompatImageView
             android:id="@+id/first_image"
             android:layout_width="50dp"
             android:layout_height="50dp" />

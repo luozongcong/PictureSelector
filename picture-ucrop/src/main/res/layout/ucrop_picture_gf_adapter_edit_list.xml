@@ -16,17 +16,18 @@
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="70dp"
-    android:layout_height="90dp">
+    android:layout_height="90dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <ImageView
+    <android.support.v7.widget.AppCompatImageView
         android:id="@+id/iv_dot"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="3dp"
-        android:src="@drawable/ucrop_oval_true" />
+        app:srcCompat="@drawable/ucrop_oval_true" />
 
-    <ImageView
+    <android.support.v7.widget.AppCompatImageView
         android:id="@+id/iv_photo"
         android:layout_width="match_parent"
         android:layout_height="75dp"
@@ -35,13 +36,13 @@
         android:padding="4dp"
         android:scaleType="centerCrop" />
 
-    <ImageView
+    <android.support.v7.widget.AppCompatImageView
         android:id="@+id/iv_delete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_marginTop="4dp"
-        android:src="@drawable/ucrop_ic_delete_photo"
+        app:srcCompat="@drawable/ucrop_ic_delete_photo"
         android:visibility="gone" />
 
 </RelativeLayout>

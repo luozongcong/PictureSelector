@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/picture_black"
     android:fitsSystemWindows="true"
     android:orientation="vertical">
@@ -12,13 +13,13 @@
         android:layout_height="48dp"
         android:background="?attr/picture_ac_preview_title_bg">
 
-        <ImageView
+        <android.support.v7.widget.AppCompatImageView
             android:id="@+id/picture_left_back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:paddingLeft="?attr/picture_title_action_padding"
-            android:src="?attr/picture_preview_leftBack_icon" />
+            app:srcCompat="?attr/picture_preview_leftBack_icon" />
 
         <TextView
             android:id="@+id/picture_title"

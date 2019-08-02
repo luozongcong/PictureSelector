@@ -2,14 +2,15 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/picture_black">
 
-    <ImageView
+    <android.support.v7.widget.AppCompatImageView
         android:id="@+id/picture_left_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="15dp"
-        android:src="@drawable/pic_ic_back" />
+        app:srcCompat="@drawable/pic_ic_back" />
 
     <VideoView
         android:id="@+id/video_view"
@@ -17,12 +18,12 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true" />
 
-    <ImageView
+    <android.support.v7.widget.AppCompatImageView
         android:id="@+id/iv_play"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:src="@drawable/pic_ic_video_play"
+        app:srcCompat="@drawable/pic_ic_video_play"
         android:visibility="invisible" />
 
 </RelativeLayout>
