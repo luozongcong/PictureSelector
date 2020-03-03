@@ -23,13 +23,13 @@ dependencies {
     implementation project(':picture-core')
     implementation project(':picture-ucrop')
 
-    implementation deps.support.app_compat
-    implementation deps.support.recyclerview
+    implementation deps.androidx.appcompat
+    implementation deps.androidx.recyclerview
     implementation deps.glide
     implementation deps.rxjava2
     implementation deps.rx_android
 
-    debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.6.2'
-    releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.6.2'
-    testImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.6.2'
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.6.3'
+    releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.6.3'
+    testImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.6.3'
 }

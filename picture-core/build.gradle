@@ -19,8 +19,8 @@ android {
 
 dependencies {
     compileOnly project(':picture-ucrop')
-    implementation deps.support.app_compat
-    compileOnly deps.support.recyclerview
+    implementation deps.androidx.appcompat
+    compileOnly deps.androidx.recyclerview
     compileOnly deps.glide
 
     compileOnly deps.rxjava2

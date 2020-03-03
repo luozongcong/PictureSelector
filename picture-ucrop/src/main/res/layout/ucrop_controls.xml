@@ -26,7 +26,7 @@
 
     </FrameLayout>
 
-    <android.support.v7.widget.AppCompatImageView
+    <androidx.appcompat.widget.AppCompatImageView
         android:layout_width="match_parent"
         android:layout_height="@dimen/ucrop_height_divider_shadow"
         android:layout_above="@+id/wrapper_states"
@@ -46,7 +46,7 @@
             android:id="@+id/state_scale"
             style="@style/ucrop_WrapperIconState">
 
-            <android.support.v7.widget.AppCompatImageView
+            <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/image_view_state_scale"
                 style="@style/ucrop_ImageViewWidgetIcon"
                 app:srcCompat="@drawable/ucrop_ic_scale"/>
@@ -57,7 +57,7 @@
             android:id="@+id/state_aspect_ratio"
             style="@style/ucrop_WrapperIconState">
 
-            <android.support.v7.widget.AppCompatImageView
+            <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/image_view_state_aspect_ratio"
                 style="@style/ucrop_ImageViewWidgetIcon"
                 app:srcCompat="@drawable/ucrop_ic_crop"/>
@@ -68,7 +68,7 @@
             android:id="@+id/state_rotate"
             style="@style/ucrop_WrapperIconState">
 
-            <android.support.v7.widget.AppCompatImageView
+            <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/image_view_state_rotate"
                 style="@style/ucrop_ImageViewWidgetIcon"
                 app:srcCompat="@drawable/ucrop_ic_rotate"/>

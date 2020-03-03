@@ -28,7 +28,7 @@
         style="@style/ucrop_WrapperRotateButton"
         android:layout_centerVertical="true">
 
-        <android.support.v7.widget.AppCompatImageView
+        <androidx.appcompat.widget.AppCompatImageView
             style="@style/ucrop_ImageViewWidgetIcon"
             app:srcCompat="@drawable/ucrop_ic_reset"/>
 
@@ -41,7 +41,7 @@
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true">
 
-        <android.support.v7.widget.AppCompatImageView
+        <androidx.appcompat.widget.AppCompatImageView
             style="@style/ucrop_ImageViewWidgetIcon"
             app:srcCompat="@drawable/ucrop_ic_angle"/>
 

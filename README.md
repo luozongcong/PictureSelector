@@ -73,13 +73,13 @@
 
 ```
 dependencies {
-    implementation 'com.github.xuexiangjys.PictureSelector:picture-core:1.0.1'
+    implementation 'com.github.xuexiangjys.PictureSelector:picture-core:1.0.2'
     //需要裁剪时使用
-    implementation 'com.github.xuexiangjys.PictureSelector:picture-ucrop:1.0.1'
+    implementation 'com.github.xuexiangjys.PictureSelector:picture-ucrop:1.0.2'
 
-    implementation 'com.android.support:appcompat-v7:28.0.0'
-    implementation 'com.android.support:recyclerview-v7:28.0.0'
-    implementation 'com.github.bumptech.glide:glide:4.8.0'
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
     implementation 'io.reactivex.rxjava2:rxjava:2.2.0'
     implementation 'io.reactivex.rxjava2:rxandroid:2.1.0'
 }
@@ -141,7 +141,7 @@ step 2.
  application下添加如下节点:
  
  <provider
-      android:name="android.support.v4.content.FileProvider"
+      android:name="androidx.core.content.FileProvider"
       android:authorities="${applicationId}.provider"
       android:exported="false"
       android:grantUriPermissions="true">
